@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - JWT_SECRET=your-secret-key-here
+      - JWT_REFRESH_SECRET=your-refresh-secret-key-here
+      - JWT_EXPIRE=15m
+      - JWT_REFRESH_EXPIRE=7d
+      - FRONTEND_URL=http://localhost:3000
+    networks:
+      - chat-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_URL=http://localhost:3001/api
+      - VITE_WS_URL=http://localhost:3001
+    depends_on:
+      - backend
+    networks:
+      - chat-network
+
+networks:
+  chat-network:
+    driver: bridge
