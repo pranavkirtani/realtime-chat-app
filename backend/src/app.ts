@@ -2,11 +2,11 @@ import express, { Application } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
-import { createAuthRoutes } from './routes/auth.routes.ts';
-import { errorHandler } from './middleware/error.middleware.ts';
-import { apiRateLimiter } from './middleware/rate-limit.middleware.ts';
-import { AuthService } from './services/auth.service.ts';
-import { UserService } from './services/user.service.ts';
+import { createAuthRoutes } from './routes/auth.routes';
+import { errorHandler } from './middleware/error.middleware';
+import { apiRateLimiter } from './middleware/rate-limit.middleware';
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
 
 dotenv.config();
 

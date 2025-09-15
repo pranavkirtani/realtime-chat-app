@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "esnext",
+    "module": "ESNext",
     "lib": ["ES2020"],
     "outDir": "./dist",
     "rootDir": "./src",
@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "allowJs": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -19,9 +19,13 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-     "allowImportingTsExtensions": true,
-     "noEmit": true,
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+  "exclude": ["node_modules", "dist", "**/*.test.ts"],
+  "ts-node": {
+  "experimentalSpecifierResolution": "node",
+  "experimentalResolver": true,
+  "esm": true,
+  "logError": true
+}
 }

@@ -1,10 +1,10 @@
 import { createServer } from 'http';
 import { Server } from 'socket.io';
-import { createApp } from './app.ts';
-import { SocketHandler } from './socket/socket.handler.ts';
-import { AuthService } from './services/auth.service.ts';
-import { MessageService } from './services/message.service.ts';
-import { UserService } from './services/user.service.ts';
+import { createApp } from './app';
+import { SocketHandler } from './socket/socket.handler';
+import { AuthService } from './services/auth.service';
+import { MessageService } from './services/message.service';
+import { UserService } from './services/user.service';
 
 const PORT = process.env.PORT || 3001;
 

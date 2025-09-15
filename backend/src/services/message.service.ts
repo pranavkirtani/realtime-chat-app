@@ -1,4 +1,4 @@
-import { Message, MessageType, DeliveryStatus } from '../types/index.ts';
+import { Message, MessageType, DeliveryStatus } from '../types/index';
 import { v4 as uuidv4 } from 'uuid';
 
 export interface CreateMessageDTO {

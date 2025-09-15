@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { AuthController } from '../controllers/auth.controller.ts';
-import { validateBody } from '../middleware/validation.middleware.ts';
-import { registerSchema, loginSchema } from '../utils/validation.ts';
-import { authMiddleware } from '../middleware/auth.middleware.ts';
-import { AuthService } from '../services/auth.service.ts';
-import { UserService } from '../services/user.service.ts';
+import { AuthController } from '../controllers/auth.controller';
+import { validateBody } from '../middleware/validation.middleware';
+import { registerSchema, loginSchema } from '../utils/validation';
+import { authMiddleware } from '../middleware/auth.middleware';
+import { AuthService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
 
 export const createAuthRoutes = (authService: AuthService, userService: UserService): Router => {
   const router = Router();
