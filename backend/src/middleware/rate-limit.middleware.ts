@@ -7,14 +7,13 @@ export const authRateLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
 });
-
 export const messageRateLimiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
   max: 10, // limit each user to 10 messages per minute
   message: 'Too many messages sent, please slow down',
   standardHeaders: true,
   legacyHeaders: false,
-  keyGenerator: (req) => req.user?.id || req.ip || 'anonymous',
+  keyGenerator: (req) => req.user?.id || 'ipKeyGenerator(req.ip)' || 'anonymous',
 });
 
 export const apiRateLimiter = rateLimit({

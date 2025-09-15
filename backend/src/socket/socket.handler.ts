@@ -1,8 +1,8 @@
 import { Server } from 'socket.io';
-import { AuthService } from '../services/auth.service';
-import { MessageService } from '../services/message.service';
-import { UserService } from '../services/user.service';
-import { MessageType, DeliveryStatus } from '../types';
+import { AuthService } from '../services/auth.service.ts';
+import { MessageService } from '../services/message.service.ts';
+import { UserService } from '../services/user.service.ts';
+import { MessageType, DeliveryStatus } from '../types/index.ts';
 
 interface SocketData {
   userId: string;

@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import { AuthService } from '../services/auth.service';
-import { RegisterDTO, LoginDTO } from '../types';
-import { AppError } from '../middleware/error.middleware';
+import { AuthService } from '../services/auth.service.ts';
+import { RegisterDTO, LoginDTO } from '../types/index.ts';
+import { AppError } from '../middleware/error.middleware.ts';
 
 export class AuthController {
   constructor(private authService: AuthService) {}
