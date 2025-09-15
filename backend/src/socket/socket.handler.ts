@@ -2,7 +2,7 @@ import { Server } from 'socket.io';
 import { AuthService } from '../services/auth.service';
 import { MessageService } from '../services/message.service';
 import { UserService } from '../services/user.service';
-import { MessageType, DeliveryStatus } from '../types/index';
+import { MessageType, DeliveryStatus } from '../types';
 
 interface SocketData {
   userId: string;

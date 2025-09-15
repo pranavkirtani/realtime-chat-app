@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { AuthService } from '../services/auth.service';
-import { RegisterDTO, LoginDTO } from '../types/index';
+import { RegisterDTO, LoginDTO } from '../types';
 import { AppError } from '../middleware/error.middleware';
 
 export class AuthController {
