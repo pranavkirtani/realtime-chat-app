@@ -1,5 +1,5 @@
 import { io, Socket } from 'socket.io-client';
-import { Message, TypingIndicator } from '../types';
+import type { Message, TypingIndicator } from '../types';
 
 export type SocketCallback<T = any> = (response: { success?: boolean; error?: string; [key: string]: any }) => void;
 

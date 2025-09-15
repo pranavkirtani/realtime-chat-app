@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
-import { Message, User, TypingIndicator } from '../types';
+import type { Message, User, TypingIndicator } from '../types';
 import { socketService } from '../services/socket.service';
 import { useAuth } from './AuthContext';
 

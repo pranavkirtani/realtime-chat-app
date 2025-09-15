@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios';
-import { AuthTokens } from '../types';
+import type { AuthTokens } from '../types';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 
