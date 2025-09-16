@@ -7,7 +7,7 @@ import { errorHandler } from './middleware/error.middleware';
 import { apiRateLimiter } from './middleware/rate-limit.middleware';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
-
+import { setupSwagger } from './config/swagger';
 dotenv.config();
 
 export const createApp = (userService?: UserService, authService?: AuthService): Application => {
@@ -25,6 +25,8 @@ export const createApp = (userService?: UserService, authService?: AuthService):
   }));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
+  // Swagger docs
+  setupSwagger(app);
   app.use('/api', apiRateLimiter);
 
   // Routes
