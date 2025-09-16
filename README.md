@@ -77,7 +77,7 @@ cp frontend/.env.example frontend/.env
 npm run dev
 
 # Frontend (from frontend directory)
-npm start
+npm run dev
 ```
 
 #### Using Docker
@@ -117,6 +117,10 @@ npm test
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+
+## Developer docs
+You can find the developer documentation [here](./docs/dev%20docs/index.md)
 
 ## License
 

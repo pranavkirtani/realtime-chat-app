@@ -64,3 +64,14 @@ A full-stack real-time chat application built with React, Node.js, Express, Type
 3. **Context** - Helps pass values across components. We currently use `AuthContext` and `ChatContext`.
 4. **Components** - Reusable building blocks of the user interface.
 5. **Services** - Help make calls to backend services, store tokens in local storage, and handle socket events (emit/listen).  
+
+
+## Swagger
+
+``` cd backend ```
+
+``` npm run dev ```
+
+and then hit
+
+``` http://localhost:3001/api/docs ```

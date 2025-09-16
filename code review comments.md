@@ -10,3 +10,5 @@
 8. Response status codes and error messages can be kept in separate file as constants and imported
 9. Put rate limit in some constants file so it is easy to change.
 10. Rate limit info could be persisted to Redis.
+11. Use TLS for Express.js
+12. Code coverage is low add more tests
