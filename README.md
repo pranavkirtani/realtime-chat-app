@@ -2,6 +2,11 @@
 
 A full-stack real-time chat application built with React, Node.js, TypeScript, and WebSockets.
 
+
+## High level Diagram
+<img width="363" height="185" alt="diagram" src="https://github.com/user-attachments/assets/f8aa1269-38c5-46eb-ad2a-027e84a6560f" />
+
+
 ## Features
 
 ### Core Features
