@@ -14,3 +14,7 @@ After login , the tokens are stored in LocalStorage.
 The diagram below shows how websockets and events are used to enable chatting.
 
 <img width="1000" height="1000" alt="diagram" src="../diagrams/Sequence of Events.svg">
+
+
+
+[Main Page](../../README.md)
