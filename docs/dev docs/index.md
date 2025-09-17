@@ -7,6 +7,24 @@ A full-stack real-time chat application built with React, Node.js, Express, Type
 
 Do have a look at the [sequence diagram](../user%20docs/index.md) to get a better understanding of the workflow and events.
 
+
+
+## API  Documentation
+You can get high level overview of the APIs on the [main page](../../README.md#api-documentation) and find the Swagger for the APIs on this page [below](#swagger). This section will focus on the different events and their meaning.
+1. ```user:status```: Broadcast by backend to notify all the clients that a new user has joined or existing user is disconnected.
+2. ```user:list```: This is sent by client to backend to request list of users.
+3. ```conversation:fetch```: Used to fetch conversation of a selected user.
+4. ``` messages.fetch```: Used to fetch list of all messages (i.e public chat).
+5. ```typing:start```: Is emitted by client when user clicks on text field. 
+6. ```typing:update```:Emitted by backend to intended recipient to notify of change in typing behaviour.
+7. ```typing-stop```:Emitted by client when user clicks away from text field.
+8. ```message-send```:Emitted when users clicks send button.
+9. ```message-recieved```:Emitted by backend to imply it recieved the message.
+10. ```message-delivered```:Emitted by client to indicate it recieved the message.
+11. ```message-read```:Indicates user read the message. Emitted by client.
+12. ```message-status```:Backend emits to this the sender of the message.
+
+
 ## Backend Components
 
 1. ```index.ts``` - The entry point for the Node.js backend. This file creates the HTTP server and registers the app.
@@ -111,6 +129,7 @@ and then hit
 
 1. As the application will scale with more users, it wont be possible to manage all users in memory. Better to use a Database.This could help both in managing users as well as message history.
 2. Currently a single server is maintaining the list of socket connections. This wont scale, perhaps Redis pub sub integration.
+3. Store rate limit in DB as well incase we want to in future to have separate rate limits for premium and normal users.
 
 
 ### Security
@@ -120,7 +139,7 @@ and then hit
 3. Store Refresh token in http-only cookies (not localstorage). This will need modification to the refresh endpoint to read cookies.
 
 
-### Future enhancement
+### Future Enhancements
 
 1. Perhaps we move away from password based login. Allow user to login via their phone by scanning QR codes.
 

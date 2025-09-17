@@ -15,6 +15,8 @@ The diagram below shows how websockets and events are used to enable chatting.
 
 <img width="1000" height="1000" alt="diagram" src="../diagrams/Sequence of Events.svg">
 
-
+## Data Model
+Below is a simple representation of the entities and their relationship
+<img width="700" height="400" alt="diagram" src="../diagrams/ERD.svg">
 
 [Main Page](../../README.md)

@@ -119,7 +119,7 @@ npm test
 5. Open a Pull Request
 
 
-## Developer docs
+## Documentation
 You can find the developer documentation [here](./docs/dev%20docs/index.md)
 
 Sequence diagrams can be found [here](./docs/user%20docs/index.md)
