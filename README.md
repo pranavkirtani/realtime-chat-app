@@ -122,6 +122,8 @@ npm test
 ## Developer docs
 You can find the developer documentation [here](./docs/dev%20docs/index.md)
 
+Sequence diagrams can be found [here]([here](./docs/user%20docs/index.md))
+
 ## License
 
 This project is licensed under the MIT License.

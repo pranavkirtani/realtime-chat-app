@@ -13,3 +13,4 @@
 11. Use TLS for Express.js
 12. Code coverage is low add more tests
 13. Pages are not responsive, perhaps use bootstrap?
+14. We would want to rate limit health too to avoid denial of service attack on health api.

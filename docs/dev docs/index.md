@@ -75,3 +75,12 @@ A full-stack real-time chat application built with React, Node.js, Express, Type
 and then hit
 
 ``` http://localhost:3001/api/docs ```
+
+
+## Things to improve
+
+
+### Scalability
+
+
+### Security

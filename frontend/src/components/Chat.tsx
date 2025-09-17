@@ -6,6 +6,7 @@ import { MessageInput } from './MessageInput';
 import { UserList } from './UserList';
 import { ConnectionStatus } from './ConnectionStatus';
 import '../styles/chat.css';
+import type { Message } from '../types';
 
 export const Chat: React.FC = () => {
   const { user, logout } = useAuth();
@@ -26,6 +27,7 @@ export const Chat: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const selectedUser = users.find(u => u.id === selectedUserId);
+  
   const conversationMessages = selectedUserId
     ? messages.filter(m => 
         (m.senderId === selectedUserId && m.recipientId === user?.id) ||
@@ -33,13 +35,27 @@ export const Chat: React.FC = () => {
       )
     : messages.filter(m => !m.recipientId);
 
+    const uniqueMessages=dedupeMessages(conversationMessages);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  function dedupeMessages(messages:Message[]) {
+      const seen = new Map();
+
+      for (const msg of messages) {
+        // overwrite if same ID appears again → keeps the latest one
+        seen.set(msg.id, msg);
+      }
+
+      return Array.from(seen.values());
+}
+
+
   useEffect(() => {
     scrollToBottom();
-  }, [conversationMessages]);
+  }, [uniqueMessages]);
 
   const handleSendMessage = (content: string) => {
     sendMessage(content, selectedUserId || undefined);
@@ -92,7 +108,7 @@ export const Chat: React.FC = () => {
           )}
 
           <MessageList
-            messages={conversationMessages}
+            messages={uniqueMessages}
             currentUserId={user?.id || ''}
             users={users}
           />
